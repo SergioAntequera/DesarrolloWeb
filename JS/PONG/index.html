@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--FONTS-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="tablero.css">
+    <link rel="stylesheet" href="settings.css">
+
+    <!-- Javascript-->
+    <script src="tablero.js" defer></script>
+    <script src="Player.js"></script>
+    <script src="Ball.js"></script>
+    <script src="ScoreBoard.js"></script>
+    <script src="iniciarjuego.js"></script>
+    
+    <script src="Settings.js"></script>
+
+    <title>Pong Game</title>
+</head>
+<body>
+    <div class="page-settings">
+        <span class="close" onclick="closeSettings()">&times;</span>
+        <div class="center-content">
+            <div class="title-setting">
+                <h1>Settings</h1>
+            </div>
+
+            <div class="content">
+                <div class="col-izq">
+                
+                    <div class="palette">
+                       
+                       
+                        <p class ="color"><input type="color" name="color-bola" id="color-bola" value="#ffffff">
+                            <label for="color-bola">Color de la pelota</label>
+                        </p>
+                        <p class ="color"><input type="color" name="color-player" id="color-player"  value="#ffffff">
+                            <label for="color-player">Color del jugador</label>
+                        </p>
+                        <p class ="color"><input type="color" name="color-ia" id="color-ia"  value="#ffffff">
+                            <label for="color-ia">Color de la IA</label>
+                        </p>
+                    </div>
+
+                    <div class="reset">
+                        <img class="reiniciar" src="https://ps.w.org/wp-reset/assets/icon-256x256.png?rev=1906468" alt="reset" height="100px" width="100px" onclick="reset()">
+                        <p>Reset Settings</p>
+                    </div>
+                
+                </div>
+                    
+                <div class="col-der">
+
+                    <div class="speed">
+                        <p class= "ball-speed">Ball Speed: <span class="speed">2 (Default)</span> </p>
+                        <input type="range" name="speed-bar" id="speed-bar" min="2" max="5" value="2" step="1" oninput=" setSpeed()">
+                    </div>
+
+                    <div class="limit-points">
+                        <input type="checkbox" name="limit-points" id="limit-points" onchange="setLimit()">
+                        <label for="limit-points">Match Score Limit:
+                            <input type="number" name="limit-score" id="limit-score" min="1" max="100" value="-1" disabled>
+                        </label>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+
+      
+    </div>
+    <div class="tablero">
+        <div class="settings-icon" style="position: absolute;top: 5px; left: 2px;" onclick="openSetting()">
+            <img src="settings_white_48dp.svg" width="48px" height="48px" alt="boton de settings" >
+            
+            </div>
+       
+        <div class="boton-play" style="position: absolute;height: 48px;width: 48px;top: 5px; left: 48px;" onclick="inciarGame()">
+           <img src="play_arrow_white_48dp.svg" width="48px" height="48px" alt="play">
+        </div>
+            <div class="marcador">
+            <div class="m-izquierda">
+            </div>
+            
+            <div class="m-derecha"></div>
+        </div>
+
+        <div class="player1" style="top: 50%;height: 100px;"></div>
+        <div class="player2" style="top: 50%;height: 100px;"></div>
+        <div class="ball" style="top:50%; left: 50%;"></div>
+
+        <div class="linea-central">
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+        </div>
+
+    </div>
+    
+    <script>
+        var menu = document.querySelector(".page-settings");
+        function openSetting(){
+            
+            menu.style.display = "block";
+           
+        }
+       function closeSettings(){
+            menu.style.display = "none";
+       }
+       var estado = 0;
+        function inciarGame(){
+           
+            iniciarJuego(estado);
+           
+    
+        }
+
+        function setSpeed(){
+           
+            var select = document.getElementById("speed-bar").value;
+         
+            var span = document.getElementsByTagName("span")[1];
+            
+            span.innerHTML = select;
+           
+        }
+        function setLimit(){
+            
+           var limit = document.getElementById("limit-score");
+           if(!limit.hasAttribute("disabled")){
+          
+            limit.setAttribute("disabled","true");
+           }else{
+            limit.removeAttribute("disabled");
+           }
+        }
+        function reset(){
+            var colorPlayer = document.getElementById("color-player");
+            var colorPelota = document.getElementById("color-bola");
+            var colorIA = document.getElementById("color-ia");
+            var limitScore = document.getElementById("limit-score");
+            var speedBar = document.getElementById("speed-bar");
+
+            colorPlayer.value = colorPlayer.getAttribute("value");
+            colorPelota.value = colorPelota.getAttribute("value");
+            colorIA.value = colorIA.getAttribute("value");
+            limitScore.value = limitScore.getAttribute("value");
+            speedBar.value =  speedBar.getAttribute("value");
+            setSpeed();
+        }
+
+    </script>
+</body>
+</html>
