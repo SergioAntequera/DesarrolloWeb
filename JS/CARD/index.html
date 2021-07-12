@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css" >
+    <script src="board.js" defer></script>
+    
+    <title>Couple Game</title>
+
+
+
+</head>
+<body>
+   <div class="inicio">
+       <div class="text-inicio" onclick="init()">
+           Jugar
+       </div>
+   </div>
+        <div class="info">
+
+            <div class="turnos">
+                <div class="title">
+                    
+                    Turnos
+                </div>
+                <div class="content">
+                    <span class="text-turno">0</span>
+                </div>
+            </div>
+
+            <div class="tiempo">
+                <div class="title">
+                    Tiempo
+                </div>
+                <div class="content">
+                    <span class="text-tiempo">
+                        <span class="hora">00</span>
+                        <span>:</span>
+                        <span class="minuto">00</span>
+                        <span>:</span>
+                        <span class="segundo">00</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+        <div class="board">
+               <!--<img src="/JS/CARD/images/background.png" alt="">-->
+              <div class="cards">
+                    <div class="card">
+                        
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="images/card.png" alt="">
+                            </div>
+                            <div class="flip-box-back">
+                               
+                            </div>
+                        </div>
+                    </div>
+                <div class="card">
+                   
+                   <div class="flip-box-inner">
+                       <div class="flip-box-front">
+                           <img src="images/card.png" alt="">
+                       </div>
+                       <div class="flip-box-back">
+                           
+                       </div>
+                   </div>
+               </div>
+               <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                   
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="images/card.png" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>  
+
+           
+        </div>
+
+        <div class="score-board">
+
+          
+                <div class="title">
+                    
+                    Historial
+                </div>
+                <div class="content-history">
+    
+
+                        
+                </div>
+        </div>
+
+ 
+        
+
+    
+    <!--    <div class="settings">
+            <div class="gamemode">
+                <div class="gamemode-options">
+                    <div class="solo">Solo</div>
+                    <div class="friend">Con un amigo</div>
+                    <div class="vesusIA">Contra la consola</div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="gamemode-options">
+                    <div class="">Solo</div>
+                    <div class="friend">Con un amigo</div>
+                    <div class="vesusIA">Contra la consola</div>
+                </div>
+            </div>
+            <div class="speed">
+                <div class="gamemode-options">
+                    
+                </div>
+            </div>
+        </div>
+-->
+    </div>
+</body>
+</html>

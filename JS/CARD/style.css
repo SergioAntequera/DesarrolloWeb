@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+.card{
+  
+    display: inline-block;
+    width: 11vw;
+    height: 24vh;
+    border-radius: 5%;
+    background-color: transparent;
+    perspective: 1000px;
+    transition: transform 0.8s;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.flip-box-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.rotate{
+    transform: rotateY(180deg);
+}
+.flip-box-front, .flip-box-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    backface-visibility: hidden;
+}
+
+
+.flip-box-back{
+   background-color: #00000033;
+    transform: rotateY(180deg);
+}
+
+.board{
+    background-image: url(images/background.png);
+}
+.info, .score-board{
+ 
+    position: absolute;
+ 
+    height: 96vh;
+    width: 27vw;
+}
+.info{
+    top:0;
+    left: 0;
+}
+.score-board{
+    top:20px;
+    right: 5px;
+    
+}
+.user::before{
+    content: url("images/user.png");
+    margin-left: 20px;
+}
+
+.user{
+  
+    color: #0C4DA1;
+    font-size: 2em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-indent: 0px;
+}
+.user .nombre{
+    display: inline-block;
+   
+    width: 40%;
+}
+.cards,.board{
+    height:97.2vh;
+    width: 44.66vw;
+}
+.turnos,.tiempo{
+    background-color: #F2F2F2;
+    margin: 20px;
+    height: 47vh;
+}
+.board, .tiempo, .turnos, .score-board{
+    border-radius: 2%;
+    box-shadow: 3px 5px 10px #000033, -6px -5px 20px #000033;
+}
+
+.title{
+    padding-top: 30px;
+    
+    color:#ED1C24;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    width: 100%;
+    height: 20%;
+  
+
+}
+.content{
+  
+   position: relative;
+    height: 73%;
+    width: 100%;
+}
+.text-turno, .text-tiempo{
+    position:absolute;
+    color: #0C4DA1;
+    text-align: center;
+    width: 100%;
+}
+
+.text-turno{
+    font-size: 17.5rem;
+}
+.text-tiempo{
+    top:25%;
+    font-size: 6rem;
+}
+.inicio{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00000088;
+    z-index: 9999;
+
+   
+}
+.text-inicio, .board{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.text-inicio{
+    background-color: #000;
+    border: 2px solid #fff;
+    color:#fff;
+    font-size: 3rem;
+    cursor: pointer;
+    border-radius: 5%;
+    text-align: center;
+    padding: 100px;
+    width: 100px;
+}
